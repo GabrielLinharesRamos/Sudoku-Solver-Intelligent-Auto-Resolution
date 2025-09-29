@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* Custom border widths for Sudoku grid */
+
+.border-3 {
+  border-width: 3px;
+}
+
+.border-b-3 {
+  border-bottom-width: 3px;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +40,160 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Animações aprimoradas para o sistema Sudoku */
+
+@keyframes highlight-cell {
+  0% {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    background-color: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+    transform: scale(1.02);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-focus {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes number-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gentle-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes error-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes error-highlight {
+  0% {
+    background-color: rgba(239, 68, 68, 0.1);
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    background-color: rgba(239, 68, 68, 0.2);
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.5);
+  }
+  100% {
+    background-color: rgba(239, 68, 68, 0.1);
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+  }
+}
+
+/* Classes de animação */
+.blink-bg {
+  animation: highlight-cell 1s ease-in-out;
+}
+
+.error-cell {
+  animation: error-shake 0.5s ease-in-out, error-highlight 2s ease-in-out;
+  background-color: rgba(239, 68, 68, 0.1) !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+.error-cell:hover,
+.error-cell:focus {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2), 0 0 0 3px rgba(239, 68, 68, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+.pulse-focus {
+  animation: pulse-focus 2s infinite;
+}
+
+.slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.number-appear {
+  animation: number-appear 0.4s ease-out;
+}
+
+.gentle-glow {
+  animation: gentle-glow 3s ease-in-out infinite;
+}
+
+/* Efeitos de hover aprimorados */
+.sudoku-cell:hover,
+.sudoku-cell:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(59, 130, 246, 0.3);
+  background-color: rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+/* Animação para botões */
+.button-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.button-hover:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Transições suaves globais aprimoradas */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
 }

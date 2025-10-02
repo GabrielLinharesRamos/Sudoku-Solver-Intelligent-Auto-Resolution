@@ -254,7 +254,7 @@ const SudokuBoard: React.FC = () => {
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-slate-800 mb-2">Sudoku</h1>
           <p className="text-slate-600 text-lg">Resolução Automática Inteligente</p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-4 rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-pink-300 to-pink-500 mx-auto mt-4 rounded-full"></div>
         </div>
         
         {/* Tabuleiro */}

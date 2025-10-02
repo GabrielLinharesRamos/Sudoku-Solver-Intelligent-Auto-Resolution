@@ -182,7 +182,7 @@ npm install
 1. **Input Numbers**: Click on any cell and enter numbers 1-9
 2. **Navigate**: Use arrow keys to move between cells
 3. **Auto-Solve**: The system automatically fills in obvious solutions
-4. **View Candidates**: Click the "👁️ Candidates" button to see possible numbers
+4. **View Candidates**: Click the "Candidates" button to see possible numbers
 
 ### **Keyboard Shortcuts**
 - **Arrow Keys**: Navigate between cells
